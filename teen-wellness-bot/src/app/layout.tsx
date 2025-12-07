@@ -1,21 +1,16 @@
 import './globals.css'
-import { ThemeProvider, useTheme } from '@/lib/theme-provider'
-import type { Metadata } from 'next'
+import { ThemeProvider } from '@/lib/theme-provider'
+import { ToggleBtn } from '@/components/toggle-btn'
+import type { Metadata, Viewport } from 'next'
 
 export const metadata: Metadata = {
   title: 'Teen Wellness Bot',
   description: 'ADHD support tools for teens - screener, focus timer, and wellness resources',
   manifest: '/manifest.json',
-  themeColor: '#0b0b0b',
 }
 
-function ToggleBtn(){
-  const {dark, toggle} = useTheme()
-  return (
-    <button onClick={toggle} className="rounded-md border px-3 py-1 text-sm">
-      {dark? 'Light' : 'Dark'} mode
-    </button>
-  )
+export const viewport: Viewport = {
+  themeColor: '#0b0b0b',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
