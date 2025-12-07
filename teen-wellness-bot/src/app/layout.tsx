@@ -1,5 +1,13 @@
 import './globals.css'
 import { ThemeProvider, useTheme } from '@/lib/theme-provider'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Teen Wellness Bot',
+  description: 'ADHD support tools for teens - screener, focus timer, and wellness resources',
+  manifest: '/manifest.json',
+  themeColor: '#0b0b0b',
+}
 
 function ToggleBtn(){
   const {dark, toggle} = useTheme()
